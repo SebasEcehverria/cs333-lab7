@@ -36,6 +36,8 @@ Next time you want to start it yourself: `cd my-react-app` then `npm run dev`.
 
 Question 1: what port is your app on? What do you see on the page?
 
+**My app runs on port 5173. The page displays a dark-themed Vite and React starter page with a Get Started heading, React and Vite logos, a counter button, and links to documentation and community resources.**
+
 3. In the second terminal, look at what Vite made:
 
 ```bash
@@ -45,6 +47,8 @@ ls src
 ```
 
 Question 2: which file in `src` is your app, and which file puts it on the page? (Look at the last lines of `index.html` and `src/main.jsx`.)
+
+**src/App.jsx contains the main React application. src/main.jsx imports the App component and renders it inside the root element in index.html using React's createRoot() function.**
 
 Commit: `Part 1: Vite app`
 
