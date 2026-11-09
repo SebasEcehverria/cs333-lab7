@@ -178,6 +178,8 @@ and change the `<h1>` line to:
 
 Question 6: why does the `if` go up here and not inside the `{ }` in the JSX? (Slides: expressions vs. statements.)
 
+**The if statement goes above the return because JSX curly braces only accept JavaScript expressions, not statements. An if statement is a statement, so we use it before the return to set the greeting variable and then display that variable inside JSX.**
+
 11. Your own component. Make a new file `src/List.jsx` and paste this:
 
 ```jsx
@@ -211,6 +213,8 @@ Then delete the whole `<ul>` ... `</ul>` from `App.jsx` and put this in its plac
 The page should look the same as before. Your list now lives in its own component.
 
 Question 7: look at `src/main.jsx`. What is the only component it puts on the page? How does your list get there?
+
+**main.jsx only renders the App component. App imports the List component from List.jsx and includes <List /> in its JSX. React then renders the list as part of the App component.**
 
 Your whole `App.jsx` should look like this now:
 
