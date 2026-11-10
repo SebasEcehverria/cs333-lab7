@@ -293,6 +293,8 @@ Vite makes a `dist` folder: an `index.html` and an `assets` folder. That's your 
 
 Question 8: how big is the `.js` file in `dist/assets`? Why so big for a page this small? 
 
+**My JavaScript file is 220,022 bytes (about 220 KB), or 68.81 KB when gzipped. It is relatively large because Vite bundles React, React DOM, and the JavaScript needed to render and manage components, along with my application code.**
+
 16. Copy it to your server. Your jokes API lives in your home folder because Node (pm2) has to run it. Your React build is just files, so it goes where nginx hands out files: `/var/www/html`. How much disk space do you have on your server? (this is important to keep an eye on in general)
 
 There is more than one way to organize your website. Pick one of these two:
@@ -356,6 +358,8 @@ If you change the folder name, use the same name in `--base=/yourname/`, in the 
 Then open `http://your-server-address/api/random`. Your jokes API from Lab 6 should still answer.
 
 Question 9: both of those come from the same server on port 80. How does nginx know which one to send you?
+
+**Nginx uses location blocks to determine how to handle each URL. Requests to /react/ serve the static React files from /var/www/html/react/, while requests to /api/random are forwarded to my Node.js Jokes API running on port 3000. My server also redirects HTTP traffic on port 80 to HTTPS on port 443.**
 
 Commit: `Part 5: build and deploy`
 
